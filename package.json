@@ -2,8 +2,12 @@
   "name": "create-soldev-react-native-app",
   "description": "Codebase builder for telkomsel react-native app",
   "version": "0.1.0",
-  "author": "stradivary",
-  "bin": "./bin/run.js",
+  "author": "stradivary", 
+  
+  "bin": {
+    "soldev-rn": "./bin/run.js",
+    "create-soldev-react-native-app": "./bin/run.js"
+  },
   "bugs": "https://github.com/Stradivary/create-soldev-react-native-app/issues",
   "dependencies": {
     "@inquirer/prompts": "^5.3.8",
@@ -57,6 +61,8 @@
   "repository": "Stradivary/create-soldev-react-native-app",
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
+    "dev": "node ./bin/dev",
+    "start": "node ./bin/run",
     "lint": "eslint . --ext .ts",
     "postpack": "shx rm -f oclif.manifest.json",
     "posttest": "pnpm run lint",
@@ -64,6 +70,5 @@
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif readme && git add README.md"
   },
-  "types": "dist/index.d.ts",
-  "packageManager": "yarn@3.6.4"
+  "types": "dist/index.d.ts"
 }

@@ -1,7 +1,7 @@
 {
   "name": "create-soldev-react-native-app",
   "description": "Codebase builder for telkomsel react-native app",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "stradivary",
   "bin": {
     "soldev-rn": "./bin/run.js",

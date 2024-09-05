@@ -7,13 +7,12 @@ import * as path from 'node:path';
 export default class Init extends Command {
   static args = {
     name: Args.string({ description: 'Name of the project', required: true }),
-    directory: Args.string({ default: '.', description: 'directory to create the project in' }),
+    path: Args.string({ default: '.', description: 'path to create the project in' }),
   };
 
-  static description = 'Initialize a new React Native or Expo project';
+  static description = 'Initialize a new React Native project';
 
   static flags = {
-    git: Flags.boolean({ char: 'g', description: 'Initialize a git repository' }),
     npm: Flags.boolean({ char: 'p', description: 'Install dependencies' }),
   };
 
@@ -22,12 +21,12 @@ export default class Init extends Command {
     const spinner = createSpinner();
 
     const projectName = args.name;
-    const targetDir = path.join(args.directory, projectName);
+    const targetDir = path.join(args.path, projectName);
 
-    // Step 1: Create React Native or Expo project
+    // Step 1: Create React Native project
     spinner.start({ text: `Creating React Native project` });
     try {
-      await (this.createReactNativeProject(projectName, flags));
+      await (this.createReactNativeProject(projectName, { ...flags, ...args }));
       spinner.success({ text: `${'React Native'} project created successfully` });
     } catch (error) {
       spinner.error({ text: `Failed to create ${'React Native'} project` });
@@ -45,7 +44,7 @@ export default class Init extends Command {
     }
 
 
-    this.logCompletionMessage(projectName, false);
+    this.logCompletionMessage(projectName);
   }
 
   private async addScaffoldFolders(targetDir: string) {
@@ -64,23 +63,19 @@ export default class Init extends Command {
       'init',
       name,
       (flags.npm ? '' : '--skip-install'),
-      (flags.git ? '' : '--skip-git-init'),
+      '--skip-git-init',
       '--install-pods'
     ]
-    await execa('npx', params, { cwd: flags.directory });
+    await execa('npx', params, { cwd: flags.path });
   }
 
 
-  private logCompletionMessage(projectName: string, useExpo: boolean) {
+  private logCompletionMessage(projectName: string) {
     this.log('\n🎉 Project initialized successfully!');
     this.log(`\nTo get started, run the following commands:`);
     this.log(`  cd ${projectName}`);
-    if (useExpo) {
-      this.log('  npx expo start');
-    } else {
-      this.log('  npx react-native run-android');
-      this.log('  # or');
-      this.log('  npx react-native run-ios');
-    }
+    this.log('  npx react-native run-android');
+    this.log('  # or');
+    this.log('  npx react-native run-ios');
   }
 }

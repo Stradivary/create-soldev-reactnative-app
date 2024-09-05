@@ -4,8 +4,8 @@
   "version": "0.1.2",
   "author": "stradivary",
   "bin": {
-    "soldev-rn": "./bin/run.js",
-    "create-soldev-react-native-app": "./bin/run.js"
+    "create-soldev-react-native-app": "./bin/run.js",
+    "soldev-rn": "./bin/run.js"
   },
   "bugs": "https://github.com/Stradivary/create-soldev-react-native-app/issues",
   "dependencies": {

@@ -20,7 +20,7 @@ $ npm install -g create-soldev-react-native-app
 $ create-soldev-react-native-app COMMAND
 running command...
 $ create-soldev-react-native-app (--version)
-create-soldev-react-native-app/0.1.2 linux-x64 node-v20.16.0
+create-soldev-react-native-app/0.1.3 linux-x64 node-v20.16.0
 $ create-soldev-react-native-app --help [COMMAND]
 USAGE
   $ create-soldev-react-native-app COMMAND
@@ -76,7 +76,7 @@ DESCRIPTION
   Initialize a new React Native or Expo project
 ```
 
-_See code: [src/commands/init.ts](https://github.com/Stradivary/create-soldev-react-native-app/blob/v0.1.2/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/Stradivary/create-soldev-react-native-app/blob/v0.1.3/src/commands/init.ts)_
 
 ## `create-soldev-react-native-app list`
 
@@ -93,7 +93,7 @@ EXAMPLES
   $ create-soldev-react-native-app list
 ```
 
-_See code: [src/commands/list.ts](https://github.com/Stradivary/create-soldev-react-native-app/blob/v0.1.2/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/Stradivary/create-soldev-react-native-app/blob/v0.1.3/src/commands/list.ts)_
 
 ## `create-soldev-react-native-app version`
 

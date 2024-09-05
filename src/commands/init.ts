@@ -22,7 +22,7 @@ export default class Init extends Command {
     const spinner = createSpinner();
 
     const projectName = args.name;
-    const targetDir = path.join(flags.directory, projectName);
+    const targetDir = path.join(args.directory, projectName);
 
     // Step 1: Create React Native or Expo project
     spinner.start({ text: `Creating React Native project` });

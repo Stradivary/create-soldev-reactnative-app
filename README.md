@@ -20,7 +20,7 @@ $ npm install -g create-soldev-react-native-app
 $ create-soldev-react-native-app COMMAND
 running command...
 $ create-soldev-react-native-app (--version)
-create-soldev-react-native-app/0.1.4 darwin-arm64 node-v20.14.0
+create-soldev-react-native-app/0.1.5 linux-x64 node-v20.16.0
 $ create-soldev-react-native-app --help [COMMAND]
 USAGE
   $ create-soldev-react-native-app COMMAND
@@ -30,7 +30,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`create-soldev-react-native-app help [COMMAND]`](#create-soldev-react-native-app-help-command)
-* [`create-soldev-react-native-app init NAME`](#create-soldev-react-native-app-init-name)
+* [`create-soldev-react-native-app init NAME [PATH]`](#create-soldev-react-native-app-init-name-path)
 * [`create-soldev-react-native-app list`](#create-soldev-react-native-app-list)
 * [`create-soldev-react-native-app version`](#create-soldev-react-native-app-version)
 
@@ -54,29 +54,26 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.10/src/commands/help.ts)_
 
-## `create-soldev-react-native-app init NAME`
+## `create-soldev-react-native-app init NAME [PATH]`
 
-Initialize a new React Native or Expo project
+Initialize a new React Native project
 
 ```
 USAGE
-  $ create-soldev-react-native-app init NAME [-d <value>] [-e] [-t <value>] [--typescript] [-v <value>]
+  $ create-soldev-react-native-app init NAME [PATH] [-p]
 
 ARGUMENTS
   NAME  Name of the project
+  PATH  [default: .] path to create the project in
 
 FLAGS
-  -d, --directory=<value>  [default: .] Directory to create the project in
-  -e, --expo               Use Expo framework
-  -t, --template=<value>   Template to use
-  -v, --version=<value>    Version of React Native or Expo to use
-      --typescript         Use TypeScript template
+  -p, --npm  Install dependencies
 
 DESCRIPTION
-  Initialize a new React Native or Expo project
+  Initialize a new React Native project
 ```
 
-_See code: [src/commands/init.ts](https://github.com/Stradivary/create-soldev-react-native-app/blob/v0.1.4/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/Stradivary/create-soldev-react-native-app/blob/v0.1.5/src/commands/init.ts)_
 
 ## `create-soldev-react-native-app list`
 
@@ -93,7 +90,7 @@ EXAMPLES
   $ create-soldev-react-native-app list
 ```
 
-_See code: [src/commands/list.ts](https://github.com/Stradivary/create-soldev-react-native-app/blob/v0.1.4/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/Stradivary/create-soldev-react-native-app/blob/v0.1.5/src/commands/list.ts)_
 
 ## `create-soldev-react-native-app version`
 

@@ -1,4 +1,4 @@
-name: publish
+name: 2. publish to npmjs
 
 on:
   release:
@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: latest
       - run: npm install
+      - run: npm run build
       - uses: JS-DevTools/npm-publish@19c28f1ef146469e409470805ea4279d47c3d35c
         with:
           token: ${{ secrets.NPM_TOKEN }}
